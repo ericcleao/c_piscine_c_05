@@ -6,7 +6,7 @@
 /*   By: ecerquei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 19:14:30 by ecerquei          #+#    #+#             */
-/*   Updated: 2019/12/06 22:38:36 by ecerquei         ###   ########.fr       */
+/*   Updated: 2019/12/06 23:29:17 by ecerquei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_ten_queens_puzzle(void)
 
 	count = 0;
 	ft_solve_queens_puzzle(0, col_placement, &count);
-	return count;
+	return (count);
 }
 
 void	ft_solve_queens_puzzle(int row, int result[10], int *count)
@@ -63,7 +63,8 @@ int		ft_is_safe(int col_placement[10], int row, int column)
 		{
 			return (0);
 		}
-		else if (column + row == i + col_placement[i] || (column - row == col_placement[i] - i))
+		else if (column + row == i + col_placement[i]
+			|| (column - row == col_placement[i] - i))
 		{
 			return (0);
 		}
